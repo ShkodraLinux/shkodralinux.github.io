@@ -1,1 +1,316 @@
-Hello World
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Shkodra Linux</title>
+    <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;600&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+    <style>
+        * {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+        }
+
+        body {
+            font-family: 'Outfit', sans-serif;
+            color: white;
+            display: flex;
+            flex-direction: column;
+            min-height: 100vh;
+            text-align: center;
+            overflow-x: hidden;
+            animation: backgroundAnimation 10s ease infinite;
+            background: linear-gradient(135deg, #000000, #8B0000);
+            background-size: 400% 400%;
+            padding: 0;
+        }
+
+        @keyframes backgroundAnimation {
+            0% { background-position: 0% 50%; }
+            50% { background-position: 100% 50%; }
+            100% { background-position: 0% 50%; }
+        }
+
+        header {
+            width: 100%;
+            padding: 15px 30px;
+            background: rgba(0, 0, 0, 0.8);
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            box-shadow: 0 4px 15px rgba(0, 0, 0, 0.3);
+            position: sticky;
+            top: 0;
+            z-index: 100;
+        }
+
+        .logo-link {
+            display: flex;
+            align-items: center;
+            text-decoration: none;
+            transition: transform 0.3s;
+        }
+
+        .logo-link:hover {
+            transform: scale(1.05);
+        }
+
+        .logo {
+            width: 60px;
+            height: 60px;
+            border-radius: 50%;
+            object-fit: contain;
+            background: rgba(255, 255, 255, 0.1);
+            padding: 5px;
+        }
+
+        .main-logo {
+            width: 600px;
+            height: auto;
+            margin: 20px 0;
+            transition: transform 0.3s;
+            max-width: 90%;
+        }
+
+        .main-logo:hover {
+            transform: scale(1.05);
+        }
+
+        .nav-buttons {
+            display: flex;
+            gap: 15px;
+        }
+
+        .nav-button {
+            background-color: rgba(139, 0, 0, 0.7);
+            color: white;
+            padding: 8px 20px;
+            border: none;
+            border-radius: 6px;
+            font-size: 1em;
+            cursor: pointer;
+            transition: all 0.3s;
+            text-decoration: none;
+            box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);
+        }
+
+        .nav-button:hover {
+            background-color: rgba(165, 42, 42, 0.9);
+            transform: translateY(-2px);
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3);
+        }
+
+        .main-content {
+            flex: 1;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            padding: 30px 20px;
+        }
+
+        p {
+            font-size: 1.5em;
+            margin: 20px 0;
+            max-width: 800px;
+            line-height: 1.5;
+        }
+
+        .map-fact-container {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            flex-wrap: wrap;
+            gap: 30px;
+            margin: 30px 0;
+            max-width: 1200px;
+        }
+
+        .fact {
+            font-size: 1.2em;
+            padding: 20px;
+            background: rgba(255, 255, 255, 0.1);
+            border-radius: 15px;
+            max-width: 400px;
+            text-align: left;
+            backdrop-filter: blur(5px);
+            border: 1px solid rgba(255, 255, 255, 0.1);
+        }
+
+        .map-container {
+            width: 600px;
+            height: 400px;
+            border-radius: 15px;
+            overflow: hidden;
+            box-shadow: 0 8px 20px rgba(0, 0, 0, 0.3);
+            border: 2px solid rgba(255, 255, 255, 0.2);
+        }
+
+        #google-map {
+            width: 100%;
+            height: 100%;
+            border: none;
+            filter: grayscale(30%) contrast(120%) brightness(0.8);
+        }
+
+        .button {
+            background-color: #8B0000;
+            color: white;
+            padding: 12px 25px;
+            border: none;
+            border-radius: 8px;
+            font-size: 1.2em;
+            cursor: pointer;
+            transition: all 0.3s;
+            text-decoration: none;
+            margin-top: 20px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+        }
+
+        .button:hover {
+            background-color: #A52A2A;
+            transform: translateY(-3px);
+            box-shadow: 0 6px 12px rgba(0, 0, 0, 0.3);
+        }
+
+        .features {
+            display: flex;
+            justify-content: center;
+            margin: 30px 0;
+            flex-wrap: wrap;
+            gap: 20px;
+            max-width: 1000px;
+        }
+
+        .feature {
+            background: rgba(255, 255, 255, 0.1);
+            border-radius: 20px;
+            padding: 25px;
+            width: 220px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            flex-direction: column;
+            transition: all 0.3s;
+            backdrop-filter: blur(5px);
+            border: 1px solid rgba(255, 255, 255, 0.1);
+            box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2);
+        }
+
+        .feature:hover {
+            transform: translateY(-10px) scale(1.03);
+            background: rgba(255, 255, 255, 0.15);
+            box-shadow: 0 12px 20px rgba(0, 0, 0, 0.3);
+        }
+
+        .feature img {
+            width: 60px;
+            height: 60px;
+            margin-bottom: 15px;
+            object-fit: contain;
+            filter: brightness(0) invert(1);
+        }
+
+        .feature h3 {
+            font-size: 1.4em;
+            margin: 10px 0 0;
+            font-weight: 600;
+        }
+
+        footer {
+            width: 100%;
+            padding: 20px;
+            background: rgba(0, 0, 0, 0.8);
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            gap: 15px;
+        }
+
+        .footer-text {
+            font-size: 0.9em;
+            opacity: 0.8;
+        }
+
+        .github-icon {
+            color: white;
+            font-size: 2em;
+            transition: transform 0.3s;
+        }
+
+        .github-icon:hover {
+            transform: scale(1.2);
+        }
+
+        @media (max-width: 1000px) {
+            .map-fact-container {
+                flex-direction: column;
+            }
+            .map-container {
+                width: 100%;
+                max-width: 600px;
+            }
+            .fact {
+                max-width: 600px;
+            }
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <a href="#home" class="logo-link">
+            <img src="https://github.com/ShkodraLinux/.github/raw/main/logo/logo3.png" alt="Shkodra Linux" class="logo">
+        </a>
+        <div class="nav-buttons">
+            <a href="#download" class="nav-button">Download</a>
+            <a href="#branding" class="nav-button">Brand</a>
+        </div>
+    </header>
+
+    <div class="main-content">
+        <img src="https://github.com/ShkodraLinux/.github/raw/main/logo/logo2.png" alt="Shkodra Linux" class="main-logo">
+        <p>We are based on <a href="https://ubuntu.com" target="_blank"><img src="https://assets.ubuntu.com/v1/a7e3c509-Canonical%20Ubuntu.svg" height="45" alt="Ubuntu"></a> 24.04.2 LTS</p>
+        
+        <div class="features">
+            <div class="feature">
+                <img src="https://img.icons8.com/ios-filled/50/ffffff/security-checked.png" alt="Stability">
+                <h3>Stable (no)</h3>
+            </div>
+            <div class="feature">
+                <img src="https://img.icons8.com/ios-filled/50/ffffff/lightweight.png" alt="Lightweight">
+                <h3>Light</h3>
+            </div>
+            <div class="feature">
+                <img src="https://img.icons8.com/ios-filled/50/ffffff/controller.png" alt="Gaming">
+                <h3>Good for gaming</h3>
+            </div>
+            <div class="feature">
+                <img src="https://img.icons8.com/ios-filled/50/ffffff/open-source.png" alt="Open Source">
+                <h3>Open-Source</h3>
+            </div>
+        </div>
+
+        <div class="map-fact-container">
+            <div class="map-container">
+                <iframe id="google-map" src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d46940.38928478325!2d19.4899885!3d42.0669245!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x134dd9d7c4bdf6b7%3A0x1bf48a26f93c9c3!2z0KjQutC-0LDRgNCwLCDQkNC70YLQsNC20LAgMTAwMQ!5e0!3m2!1sru!2s!4v1620000000000!5m2!1sru!2s" allowfullscreen="" loading="lazy"></iframe>
+            </div>
+            <div class="fact">
+                <h3>Interesting fact</h3>
+                <p>Shkodra is a city in Albania. It's known for its beautiful lake (the largest in the Balkans), Rozafa Castle, and rich cultural heritage.</p>
+                <p>I selected this name for no reason. lol</p>
+            </div>
+        </div>
+        
+        <a href="#download" class="button">Will be available soon</a>
+    </div>
+
+    <footer>
+        <a href="https://github.com/ShkodraLinux" target="_blank" class="github-icon">
+            <i class="fab fa-github"></i>
+        </a>
+        <p class="footer-text">Linux® is the registered trademark of Linus Torvalds in the U.S. and other countries.</p>
+    </footer>
+</body>
+</html>
