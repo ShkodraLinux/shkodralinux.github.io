@@ -1,0 +1,304 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Shkodra Linux - Brand</title>
+    <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;600&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+    <style>
+        * {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+        }
+
+        body {
+            font-family: 'Outfit', sans-serif;
+            color: white;
+            display: flex;
+            flex-direction: column;
+            min-height: 100vh;
+            text-align: center;
+            overflow-x: hidden;
+            animation: backgroundAnimation 10s ease infinite;
+            background: linear-gradient(135deg, rgb(0, 0, 0), rgb(162, 0, 13));
+            background-size: 400% 400%;
+            padding: 0;
+        }
+
+        @keyframes backgroundAnimation {
+            0% { background-position: 0% 50%; }
+            50% { background-position: 100% 50%; }
+            100% { background-position: 0% 50%; }
+        }
+
+        header {
+            width: 100%;
+            padding: 15px 30px;
+            background: rgba(0, 0, 0, 0.8);
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            box-shadow: 0 4px 15px rgba(0, 0, 0, 0.3);
+            position: sticky;
+            top: 0;
+            z-index: 100;
+        }
+
+        .logo-link {
+            display: flex;
+            align-items: center;
+            text-decoration: none;
+            transition: transform 0.3s;
+        }
+
+        .logo-link:hover {
+            transform: scale(1.05);
+        }
+
+        .logo {
+            width: 60px;
+            height: 60px;
+            border-radius: 50%;
+            object-fit: contain;
+            background: rgba(255, 255, 255, 0.1);
+            padding: 5px;
+        }
+
+        .nav-buttons {
+            display: flex;
+            gap: 15px;
+        }
+
+        .nav-button {
+            background-color: rgba(162, 0, 13, 0.7);
+            color: white;
+            padding: 8px 20px;
+            border: none;
+            border-radius: 6px;
+            font-size: 1em;
+            cursor: pointer;
+            transition: all 0.3s;
+            text-decoration: none;
+            box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);
+        }
+
+        .nav-button:hover {
+            background-color: rgba(162, 0, 13, 0.9);
+            transform: translateY(-2px);
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3);
+        }
+
+        .main-content {
+            flex: 1;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            padding: 40px 20px;
+        }
+
+        .brand-section {
+            max-width: 1000px;
+            width: 100%;
+        }
+
+        .brand-title {
+            font-size: 2.5em;
+            margin-bottom: 40px;
+            color: white;
+            text-shadow: 0 2px 4px rgba(0, 0, 0, 0.3);
+        }
+
+        .logos-container {
+            display: flex;
+            justify-content: center;
+            flex-wrap: wrap;
+            gap: 50px;
+            margin-bottom: 50px;
+        }
+
+        .logo-card {
+            background: rgba(255, 255, 255, 0.1);
+            border-radius: 20px;
+            padding: 30px;
+            width: 300px;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            transition: all 0.3s;
+            backdrop-filter: blur(5px);
+            border: 1px solid rgba(255, 255, 255, 0.1);
+            box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2);
+        }
+
+        .logo-card:hover {
+            transform: translateY(-10px);
+            background: rgba(255, 255, 255, 0.15);
+            box-shadow: 0 12px 20px rgba(0, 0, 0, 0.3);
+        }
+
+        .brand-logo {
+            width: 100%;
+            height: auto;
+            max-width: 250px;
+            margin-bottom: 20px;
+            object-fit: contain;
+        }
+
+        .logo-name {
+            font-size: 1.5em;
+            margin-bottom: 15px;
+            font-weight: 600;
+        }
+
+        .download-btn {
+            background-color: rgb(162, 0, 13);
+            color: white;
+            padding: 10px 20px;
+            border: none;
+            border-radius: 6px;
+            font-size: 1em;
+            cursor: pointer;
+            transition: all 0.3s;
+            text-decoration: none;
+            box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);
+        }
+
+        .download-btn:hover {
+            background-color: rgba(162, 0, 13, 0.9);
+            transform: translateY(-2px);
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3);
+        }
+
+        .color-palette {
+            display: flex;
+            justify-content: center;
+            flex-wrap: wrap;
+            gap: 30px;
+            margin-top: 40px;
+        }
+
+        .color-card {
+            width: 200px;
+            height: 200px;
+            border-radius: 15px;
+            display: flex;
+            flex-direction: column;
+            justify-content: flex-end;
+            padding: 15px;
+            box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2);
+            transition: transform 0.3s;
+        }
+
+        .color-card:hover {
+            transform: scale(1.05);
+        }
+
+        .color-primary {
+            background-color: rgb(162, 0, 13);
+        }
+
+        .color-secondary {
+            background-color: rgb(0, 0, 0);
+        }
+
+        .color-value {
+            background: rgba(0, 0, 0, 0.6);
+            padding: 8px;
+            border-radius: 6px;
+            font-family: monospace;
+            font-size: 0.9em;
+        }
+
+        footer {
+            width: 100%;
+            padding: 20px;
+            background: rgba(0, 0, 0, 0.8);
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            gap: 15px;
+        }
+
+        .footer-text {
+            font-size: 0.9em;
+            opacity: 0.8;
+        }
+
+        .github-icon {
+            color: white;
+            font-size: 2em;
+            transition: transform 0.3s;
+        }
+
+        .github-icon:hover {
+            transform: scale(1.2);
+        }
+
+        @media (max-width: 768px) {
+            .logos-container {
+                flex-direction: column;
+                align-items: center;
+                gap: 30px;
+            }
+            
+            .color-palette {
+                flex-direction: column;
+                align-items: center;
+            }
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <a href="index.html" class="logo-link">
+            <img src="https://github.com/ShkodraLinux/.github/raw/main/logo/logo3.png" alt="Shkodra Linux" class="logo">
+        </a>
+        <div class="nav-buttons">
+            <a href="download.html" class="nav-button">Download</a>
+            <a href="brand.html" class="nav-button">Brand</a>
+        </div>
+    </header>
+
+    <div class="main-content">
+        <div class="brand-section">
+            <h1 class="brand-title">Brand Guidelines</h1>
+            
+            <div class="logos-container">
+                <div class="logo-card">
+                    <img src="https://github.com/ShkodraLinux/.github/raw/main/logo/logo2.png" alt="Shkodra Linux Logo" class="brand-logo">
+                    <h3 class="logo-name">Logo 1</h3>
+                    <a href="https://github.com/ShkodraLinux/.github/raw/main/logo/logo2.png" download class="download-btn">Download PNG</a>
+                </div>
+                
+                <div class="logo-card">
+                    <img src="https://github.com/ShkodraLinux/.github/raw/main/logo/logo3.png" alt="Shkodra Linux Icon" class="brand-logo">
+                    <h3 class="logo-name">Logo 2</h3>
+                    <a href="https://github.com/ShkodraLinux/.github/raw/main/logo/logo3.png" download class="download-btn">Download PNG</a>
+                </div>
+            </div>
+            
+            <h2 class="brand-title">Color Palette</h2>
+            
+            <div class="color-palette">
+                <div class="color-card color-primary">
+                    <span class="color-value">RGB: 162, 0, 13<br>HEX: #A2000D</span>
+                </div>
+                
+                <div class="color-card color-secondary">
+                    <span class="color-value">RGB: 0, 0, 0<br>HEX: #000000</span>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <footer>
+        <a href="https://github.com/ShkodraLinux" target="_blank" class="github-icon">
+            <i class="fab fa-github"></i>
+        </a>
+        <p class="footer-text">Linux® is the registered trademark of Linus Torvalds in the U.S. and other countries.</p>
+    </footer>
+</body>
+</html>
